@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema(
         passwordHash: { type: String, required: [true, "Password is required"], select: false},
         tel: { type: String, trim: true, default: ""},
         gender: { type: String, trim: true, default: ""},
-        doe: { type: Date, default: null},
+        dob: { type: Date, default: null},
         imageUrl: { type: String, trim: true, default: ""},
         currentEmotionId: {type: mongoose.Schema.Types.ObjectId, ref: "Emotional", default: null}
     },

@@ -15,7 +15,7 @@ function sanitizeUser(userDoc) {
         email: userDoc.email,
         tel: userDoc.tel,
         gender: userDoc.gender,
-        doe: userDoc.doe,
+        dob: userDoc.dob,
         imageUrl: userDoc.imageUrl,
         currentEmotionId: userDoc.currentEmotionId,
         createdAt: userDoc.createdAt
@@ -24,7 +24,7 @@ function sanitizeUser(userDoc) {
 
 export async function register(req, res) {
     try {
-        const { name, email, password, tel, gender, doe, imageUrl } = req.body;
+        const { name, email, password, tel, gender, dob, imageUrl } = req.body;
 
         if (!name || !email || !password) {
             return res
@@ -55,7 +55,7 @@ export async function register(req, res) {
             passwordHash,
             tel: tel ? String(tel).trim() : "",
             gender: gender ? String(gender).trim() : "",
-            doe: doe ? new Date(doe) : null,
+            dob: dob ? new Date(dob) : null,
             imageUrl: imageUrl ? String(imageUrl).trim() : ""
         });
 
